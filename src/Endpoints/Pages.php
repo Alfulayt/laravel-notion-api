@@ -47,8 +47,10 @@ class Pages extends Endpoint implements EndpointInterface
         $postData["parent"] = ["database_id" => $parentId];
         $postData["properties"] = $properties;
         
-        $postData["icon"] = ["type" => "external", "external" => ["url" => $page->getIcon()] ];
-        $postData["cover"] = ["type" => "external", "external" => ["url" => $page->getCover()] ];
+        if ($page->getIcon()) {
+            $postData["icon"] = ["type" => "external", "external" => ["url" => $page->getIcon()] ];
+            $postData["cover"] = ["type" => "external", "external" => ["url" => $page->getCover()] ];
+        }
 
 
         $response = $this
