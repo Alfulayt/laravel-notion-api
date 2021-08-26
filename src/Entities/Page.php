@@ -30,6 +30,16 @@ class Page extends Entity
      * @var string
      */
     protected string $title = '';
+    
+        /**
+     * @var string
+     */
+    protected string $icon = '';
+
+    /**
+     * @var string
+     */
+    protected string $cover = '';
 
     /**
      * @var string
@@ -165,6 +175,31 @@ class Page extends Entity
         if (Arr::exists($this->responseData, 'url')) {
             $this->url = $this->responseData['url'];
         }
+    }
+    
+        /**
+     * @param $propertyTitle
+     * @param $number
+     * @return Page
+     */
+    public function setIcon(string $icon)
+    {
+        $this->icon = $icon ;
+    }
+
+    public function getIcon()
+    {
+        return $this->icon ;
+    }
+
+    public function setCover(string $cover)
+    {
+        $this->cover = $cover ;
+    }
+
+    public function getCover()
+    {
+        return $this->cover ;
     }
 
     /**
