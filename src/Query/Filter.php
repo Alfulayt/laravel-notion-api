@@ -60,6 +60,11 @@ class Filter extends QueryHelper
     {
         return new Filter($property, 'text', $filterConditions);
     }
+    
+    public static function relationFilter(string $property, array $filterConditions): Filter
+    {
+        return new Filter($property, 'relation', $filterConditions);
+    }
 
     /**
      * This method allows you to define every filter that is offered
